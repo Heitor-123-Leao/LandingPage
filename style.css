@@ -70,6 +70,47 @@
     color: #ffffff;
 }
 
+.darkmode {
+    position: fixed;
+    top: 50%;
+    left: 5px;
+    height: 50px;
+    width: 50px;
+    background-color: #b8b7b7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.darkmode img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.darkmode:hover,
+.darkmode:focus-visible {
+    width: 64px;
+    height: 64px;
+    transform: translateX(4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.darkmode:hover img,
+.darkmode:focus-visible img {
+    transform: scale(1.08);
+}
+
+.darkmode.active {
+    background-color: #001c4f;
+}
+
 .descricao-qualidades {
     position: relative;
     display: grid;
@@ -78,6 +119,12 @@
     gap: 30px;
     justify-items: center;
     padding: 40px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.descricao-qualidades.dark-theme {
+    background-color: #012837;
 }
 
 .descricao-qualidades::before,
@@ -116,12 +163,22 @@
     font-size: 1.5rem;
     font-family: "Montserrat", sans-serif;
     color: #4caf50;
+    transition: color 0.3s ease;
+}
+
+.descricao-qualidades h2.dark-theme-title {
+    color: #048e44;
 }
 
 .descricao-qualidades p {
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: #000000;
+    transition: color 0.3s ease;
+}
+
+.descricao-qualidades p.dark-theme-text {
+    color: #ffffff;
 }
 
 .titulo-produtos {
@@ -396,12 +453,22 @@
     align-items: center;
     gap: 20px;
     padding: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.avaliacoes.dark-theme {
+    background-color: #001728;
 }
 
 .avaliacoes h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.0rem;
-    color: #4caf50;
+    color: #0143a7;
+    transition: color 0.3s ease;
+}
+
+.avaliacoes h1.dark-theme-title {
+    color: #137a01;
 }
 
 .avaliacoes-quadrado {
@@ -424,18 +491,30 @@
     border: 2px solid rgb(145, 145, 145);
     font-family: "Montserrat", sans-serif;
     padding: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.avaliacao.dark-theme-card {
+    background-color: #696d6f;
+    border-color: #001728;
 }
 
 .avaliacao h3 {
     font-size: 1.5rem;
-    color: #2f7b31;
+    color: #0c0443;
 }
 
-footer {
+footer.item {
     height: 60vh;
     width: 100%;
     background-color: #d4d4d4;
     border-bottom: 20px solid rgb(3, 42, 150);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+footer.item.dark-theme {
+    background-color: #001728;
+    border-bottom-color: #01133b;
 }
 
 
@@ -493,15 +572,23 @@ footer {
 
 .direita h1 {
     color: #062479;
+    transition: color 0.3s ease;
 }
 
+.direita h1.dark-theme-title {
+    color: #00551c;
+}
 
 .direita a{
     color: rgb(0, 0, 0);
     text-decoration: none;
     line-height: 5vh;
+    transition: color 0.3s ease;
 }
 
+.direita a.dark-theme-link {
+    color: #ffffff;
+}
 
 #direitos-aut {
     display: flex;
@@ -512,6 +599,10 @@ footer {
     font-weight: 400;
     color: rgb(0, 0, 0);
     gap: 1vw;
+    transition: color 0.3s ease;
 }
 
+#direitos-aut.dark-theme-text {
+    color: #ffffff;
+}
 
